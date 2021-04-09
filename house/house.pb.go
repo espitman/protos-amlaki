@@ -193,8 +193,8 @@ type ResponseDetails struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	//`bson:"_id,omitempty"`
-	Id           string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// @inject_tag: json:"_id"
+	Id           string `protobuf:"bytes,1,opt,name=id,proto3" json:"_id"`
 	Title        string `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
 	BackdropPath string `protobuf:"bytes,3,opt,name=backdrop_path,json=backdropPath,proto3" json:"backdrop_path,omitempty"`
 	PosterPath   string `protobuf:"bytes,4,opt,name=poster_path,json=posterPath,proto3" json:"poster_path,omitempty"`
