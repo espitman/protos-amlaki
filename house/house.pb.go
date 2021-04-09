@@ -264,8 +264,8 @@ type RequestCreate struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"title",validate:"required,title"
-	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"required,title"`
+	// @inject_tag: json:"title",validate:"required"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"required"`
 }
 
 func (x *RequestCreate) Reset() {

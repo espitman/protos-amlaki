@@ -30,7 +30,7 @@ message ResponseDetails {
 }
 
 message RequestCreate {
-    // @inject_tag: json:"title",validate:"required,title"
+    // @inject_tag: json:"title",validate:"required"
     string title = 1;
 }
 
