@@ -36,6 +36,5 @@ message RequestCreate {
 
 service houseService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
-    rpc Details(RequestDetails) returns (ResponseDetails) {}
 }
 
