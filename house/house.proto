@@ -20,7 +20,7 @@ message RequestDetails {
 }
 
 message ResponseDetails {
-    // @inject_tag: json:"_id"
+    //`bson:"_id,omitempty"`
     string id = 1;
     string title = 2;
     string backdrop_path = 3;
