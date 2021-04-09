@@ -15,14 +15,14 @@ message Image {
 
 message RequestDetails {
     // @inject_tag: json:"id",validate:"required"
-    int32 id = 1;
+    string id = 1;
 
     // @inject_tag: json:"full"
     bool full = 2;
 }
 
 message ResponseDetails {
-    int32 id = 1;
+    string id = 1;
     string title = 2;
     string backdrop_path = 3;
     string poster_path = 4;
