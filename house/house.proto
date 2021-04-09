@@ -29,6 +29,12 @@ message ResponseDetails {
    
 }
 
+message RequestCreate {
+    // @inject_tag: json:"title",validate:"required,title"
+    string title = 1;
+}
+
 service houseService {
+    rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc Details(RequestDetails) returns (ResponseDetails) {}
 }
