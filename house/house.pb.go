@@ -259,6 +259,54 @@ func (x *ResponseDetails) GetPosterPath() string {
 	return ""
 }
 
+type RequestCreate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: json:"title",validate:"required,title"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"required,title"`
+}
+
+func (x *RequestCreate) Reset() {
+	*x = RequestCreate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_house_house_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RequestCreate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestCreate) ProtoMessage() {}
+
+func (x *RequestCreate) ProtoReflect() protoreflect.Message {
+	mi := &file_house_house_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestCreate.ProtoReflect.Descriptor instead.
+func (*RequestCreate) Descriptor() ([]byte, []int) {
+	return file_house_house_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RequestCreate) GetTitle() string {
+	if x != nil {
+		return x.Title
+	}
+	return ""
+}
+
 var File_house_house_proto protoreflect.FileDescriptor
 
 var file_house_house_proto_rawDesc = []byte{
@@ -283,12 +331,18 @@ var file_house_house_proto_rawDesc = []byte{
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x62, 0x61, 0x63, 0x6b, 0x64, 0x72, 0x6f, 0x70, 0x50, 0x61,
 	0x74, 0x68, 0x12, 0x1f, 0x0a, 0x0b, 0x70, 0x6f, 0x73, 0x74, 0x65, 0x72, 0x5f, 0x70, 0x61, 0x74,
 	0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x70, 0x6f, 0x73, 0x74, 0x65, 0x72, 0x50,
-	0x61, 0x74, 0x68, 0x32, 0x4a, 0x0a, 0x0c, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x53, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x12, 0x3a, 0x0a, 0x07, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x15,
-	0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65,
-	0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x16, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22, 0x00, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x61, 0x74, 0x68, 0x22, 0x25, 0x0a, 0x0d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x32, 0x84, 0x01, 0x0a, 0x0c, 0x68,
+	0x6f, 0x75, 0x73, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x38, 0x0a, 0x06, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x14, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x16, 0x2e, 0x68, 0x6f,
+	0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x73, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x07, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
+	0x12, 0x15, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x16, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22,
+	0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -303,20 +357,23 @@ func file_house_house_proto_rawDescGZIP() []byte {
 	return file_house_house_proto_rawDescData
 }
 
-var file_house_house_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_house_house_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_house_house_proto_goTypes = []interface{}{
 	(*Images)(nil),          // 0: house.Images
 	(*Image)(nil),           // 1: house.Image
 	(*RequestDetails)(nil),  // 2: house.RequestDetails
 	(*ResponseDetails)(nil), // 3: house.ResponseDetails
+	(*RequestCreate)(nil),   // 4: house.RequestCreate
 }
 var file_house_house_proto_depIdxs = []int32{
 	1, // 0: house.Images.backdrops:type_name -> house.Image
 	1, // 1: house.Images.posters:type_name -> house.Image
-	2, // 2: house.houseService.Details:input_type -> house.RequestDetails
-	3, // 3: house.houseService.Details:output_type -> house.ResponseDetails
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
+	4, // 2: house.houseService.Create:input_type -> house.RequestCreate
+	2, // 3: house.houseService.Details:input_type -> house.RequestDetails
+	3, // 4: house.houseService.Create:output_type -> house.ResponseDetails
+	3, // 5: house.houseService.Details:output_type -> house.ResponseDetails
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
@@ -376,6 +433,18 @@ func file_house_house_proto_init() {
 				return nil
 			}
 		}
+		file_house_house_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RequestCreate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -383,7 +452,7 @@ func file_house_house_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_house_house_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -409,6 +478,7 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type HouseServiceClient interface {
+	Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error)
 	Details(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseDetails, error)
 }
 
@@ -418,6 +488,15 @@ type houseServiceClient struct {
 
 func NewHouseServiceClient(cc grpc.ClientConnInterface) HouseServiceClient {
 	return &houseServiceClient{cc}
+}
+
+func (c *houseServiceClient) Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error) {
+	out := new(ResponseDetails)
+	err := c.cc.Invoke(ctx, "/house.houseService/Create", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *houseServiceClient) Details(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseDetails, error) {
@@ -431,6 +510,7 @@ func (c *houseServiceClient) Details(ctx context.Context, in *RequestDetails, op
 
 // HouseServiceServer is the server API for HouseService service.
 type HouseServiceServer interface {
+	Create(context.Context, *RequestCreate) (*ResponseDetails, error)
 	Details(context.Context, *RequestDetails) (*ResponseDetails, error)
 }
 
@@ -438,12 +518,33 @@ type HouseServiceServer interface {
 type UnimplementedHouseServiceServer struct {
 }
 
+func (*UnimplementedHouseServiceServer) Create(context.Context, *RequestCreate) (*ResponseDetails, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
 func (*UnimplementedHouseServiceServer) Details(context.Context, *RequestDetails) (*ResponseDetails, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Details not implemented")
 }
 
 func RegisterHouseServiceServer(s *grpc.Server, srv HouseServiceServer) {
 	s.RegisterService(&_HouseService_serviceDesc, srv)
+}
+
+func _HouseService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestCreate)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(HouseServiceServer).Create(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/house.houseService/Create",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(HouseServiceServer).Create(ctx, req.(*RequestCreate))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _HouseService_Details_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -468,6 +569,10 @@ var _HouseService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "house.houseService",
 	HandlerType: (*HouseServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Create",
+			Handler:    _HouseService_Create_Handler,
+		},
 		{
 			MethodName: "Details",
 			Handler:    _HouseService_Details_Handler,
