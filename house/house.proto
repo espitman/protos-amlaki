@@ -1,6 +1,7 @@
 syntax = "proto3";
 package house;
 
+
 message Images {
     repeated Image backdrops = 1;
     repeated Image posters = 2;
@@ -20,6 +21,7 @@ message RequestDetails {
 }
 
 message ResponseDetails {
+    // @inject_tag: json:"_id"
     string id = 1;
     string title = 2;
     string backdrop_path = 3;
