@@ -29,11 +29,7 @@ message RequestDetails {
 
 message ResponseDetails {
     string id = 1;
-    string title = 2;
-    string backdrop_path = 3;
-    string poster_path = 4;
-
-   
+    House house = 2;
 }
 
 message RequestCreate {
