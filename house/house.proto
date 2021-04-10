@@ -37,7 +37,8 @@ message ResponseDetails {
 }
 
 message RequestCreate {
-   House house = 1;
+    // @inject_tag: json:"house",validate:"required"
+    House house = 1;
 }
 
 service houseService {
