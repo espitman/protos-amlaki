@@ -11,6 +11,13 @@ message Image {
     string file_path =1;
 }
 
+message House {
+    // @inject_tag: json:"title",validate:"required"
+    string title = 1;
+    // @inject_tag: json:"bedroomsCount",validate:"required"
+    int32 bedroomsCount = 2;
+}
+
 
 message RequestDetails {
     // @inject_tag: json:"id",validate:"required"
@@ -25,12 +32,12 @@ message ResponseDetails {
     string title = 2;
     string backdrop_path = 3;
     string poster_path = 4;
+
    
 }
 
 message RequestCreate {
-    // @inject_tag: json:"title",validate:"required"
-    string title = 1;
+   House house = 1;
 }
 
 service houseService {
