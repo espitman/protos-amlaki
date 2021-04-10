@@ -16,6 +16,8 @@ message House {
     string title = 1;
     // @inject_tag: json:"bedroomsCount",validate:"required"
     int32 bedroomsCount = 2;
+    // @inject_tag: json:"bathroomsCount",validate:"required"
+    int32 bathroomsCount = 3;
 }
 
 
