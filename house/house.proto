@@ -30,7 +30,7 @@ message House {
     // @inject_tag: json:"areaSize",validate:"number,min=0"
     int32 areaSize = 6;
 
-    // @inject_tag: json:"postalCode",validate:"number,min=0,required"
+    // @inject_tag: json:"postalCode",validate:"alphanum"
     string postalCode = 7;
 
     // @inject_tag: json:"floorsNo",validate:"number,min=0"

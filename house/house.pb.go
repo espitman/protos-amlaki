@@ -148,8 +148,8 @@ type House struct {
 	BuiltYear int32 `protobuf:"varint,5,opt,name=builtYear,proto3" json:"builtYear" validate:"number,min=0,required"`
 	// @inject_tag: json:"areaSize",validate:"number,min=0"
 	AreaSize int32 `protobuf:"varint,6,opt,name=areaSize,proto3" json:"areaSize" validate:"number,min=0"`
-	// @inject_tag: json:"postalCode",validate:"number,min=0,required"
-	PostalCode string `protobuf:"bytes,7,opt,name=postalCode,proto3" json:"postalCode" validate:"number,min=0,required"`
+	// @inject_tag: json:"postalCode",validate:"alphanum"
+	PostalCode string `protobuf:"bytes,7,opt,name=postalCode,proto3" json:"postalCode" validate:"alphanum"`
 	// @inject_tag: json:"floorsNo",validate:"number,min=0"
 	FloorsNo int32 `protobuf:"varint,8,opt,name=floorsNo,proto3" json:"floorsNo" validate:"number,min=0"`
 	// @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
