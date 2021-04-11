@@ -68,7 +68,7 @@ message House {
 }
 
 message Amenities {
-    // @inject_tag: json:"pool"
+    // @inject_tag: json:"pool",validate:"oneof='true' 'false'"
     bool pool = 1;
 
     // @inject_tag: json:"equippedKitchen"
