@@ -14,36 +14,52 @@ message Image {
 message House {
     // @inject_tag: json:"title",validate:"required"
     string title = 1;
+
     // @inject_tag: json:"bedroomsCount",validate:"number,min=0"
     int32 bedroomsCount = 2;
+
     // @inject_tag: json:"bathroomsCount",validate:"number,min=0"
     int32 bathroomsCount = 3;
+
     // @inject_tag: json:"garagesCount",validate:"number,min=0"
     int32 garagesCount = 4;
+
     // @inject_tag: json:"builtYear",validate:"number,min=0,required"
     int32 builtYear = 5;
+
     // @inject_tag: json:"areaSize",validate:"number,min=0"
     int32 areaSize = 6;
+
     // @inject_tag: json:"postalCode",validate:"number,min=0,required"
     string postalCode = 7;
+
     // @inject_tag: json:"floorsNo",validate:"number,min=0"
     int32 floorsNo = 8;
+
     // @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
     int32 numberOfFloors = 9;
+
     // @inject_tag: json:"facadeMaterial",validate:"number,min=0,required"
     string facadeMaterial = 10;
+
     // @inject_tag: json:"floorMaterial",validate:"alpha"
     string floorMaterial = 11;
+
     // @inject_tag: json:"cabinetMaterial",validate:"alpha"
     string cabinetMaterial = 12;
-    // @inject_tag: json:"warehouseSize",validate:"alpha"
+
+    // @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
     string warehouseSize = 13;
-    // @inject_tag: json:"buildingDirection",validate:"number,min=0"
+
+    // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n s'"
     string buildingDirection = 14;
-    // @inject_tag: json:"heatingSystem",validate:"alpha,oneof='n s'"
+
+    // @inject_tag: json:"heatingSystem",validate:"alpha"
     string heatingSystem = 15;
+
     // @inject_tag: json:"coolingSystem",validate:"alpha"
     string coolingSystem = 16;
+    
     // @inject_tag: json:"typeOfToilet",validate:"alpha"
     string typeOfToilet = 17;
 }
