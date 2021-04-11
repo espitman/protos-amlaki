@@ -740,6 +740,54 @@ func (x *Amenities) GetRoofGarden() bool {
 	return false
 }
 
+type Status struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: json:"status",validate:"alpha,oneof='confirmed' 'pending' 'rejected'"
+	Status string `protobuf:"bytes,1,opt,name=status,proto3" json:"status" validate:"alpha,oneof='confirmed' 'pending' 'rejected'"`
+}
+
+func (x *Status) Reset() {
+	*x = Status{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_house_house_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Status) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Status) ProtoMessage() {}
+
+func (x *Status) ProtoReflect() protoreflect.Message {
+	mi := &file_house_house_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Status.ProtoReflect.Descriptor instead.
+func (*Status) Descriptor() ([]byte, []int) {
+	return file_house_house_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *Status) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
 type RequestDetails struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -754,7 +802,7 @@ type RequestDetails struct {
 func (x *RequestDetails) Reset() {
 	*x = RequestDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_house_house_proto_msgTypes[4]
+		mi := &file_house_house_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -767,7 +815,7 @@ func (x *RequestDetails) String() string {
 func (*RequestDetails) ProtoMessage() {}
 
 func (x *RequestDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_house_house_proto_msgTypes[4]
+	mi := &file_house_house_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -780,7 +828,7 @@ func (x *RequestDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestDetails.ProtoReflect.Descriptor instead.
 func (*RequestDetails) Descriptor() ([]byte, []int) {
-	return file_house_house_proto_rawDescGZIP(), []int{4}
+	return file_house_house_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *RequestDetails) GetId() string {
@@ -802,14 +850,15 @@ type ResponseDetails struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id    string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	House *House `protobuf:"bytes,2,opt,name=house,proto3" json:"house,omitempty"`
+	Id     string  `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	House  *House  `protobuf:"bytes,2,opt,name=house,proto3" json:"house,omitempty"`
+	Status *Status `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 
 func (x *ResponseDetails) Reset() {
 	*x = ResponseDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_house_house_proto_msgTypes[5]
+		mi := &file_house_house_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -822,7 +871,7 @@ func (x *ResponseDetails) String() string {
 func (*ResponseDetails) ProtoMessage() {}
 
 func (x *ResponseDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_house_house_proto_msgTypes[5]
+	mi := &file_house_house_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -835,7 +884,7 @@ func (x *ResponseDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResponseDetails.ProtoReflect.Descriptor instead.
 func (*ResponseDetails) Descriptor() ([]byte, []int) {
-	return file_house_house_proto_rawDescGZIP(), []int{5}
+	return file_house_house_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ResponseDetails) GetId() string {
@@ -852,6 +901,13 @@ func (x *ResponseDetails) GetHouse() *House {
 	return nil
 }
 
+func (x *ResponseDetails) GetStatus() *Status {
+	if x != nil {
+		return x.Status
+	}
+	return nil
+}
+
 type RequestCreate struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -864,7 +920,7 @@ type RequestCreate struct {
 func (x *RequestCreate) Reset() {
 	*x = RequestCreate{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_house_house_proto_msgTypes[6]
+		mi := &file_house_house_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -877,7 +933,7 @@ func (x *RequestCreate) String() string {
 func (*RequestCreate) ProtoMessage() {}
 
 func (x *RequestCreate) ProtoReflect() protoreflect.Message {
-	mi := &file_house_house_proto_msgTypes[6]
+	mi := &file_house_house_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -890,7 +946,7 @@ func (x *RequestCreate) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestCreate.ProtoReflect.Descriptor instead.
 func (*RequestCreate) Descriptor() ([]byte, []int) {
-	return file_house_house_proto_rawDescGZIP(), []int{6}
+	return file_house_house_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *RequestCreate) GetHouse() *House {
@@ -1035,23 +1091,27 @@ var file_house_house_proto_rawDesc = []byte{
 	0x68, 0x6f, 0x6f, 0x64, 0x18, 0x28, 0x20, 0x01, 0x28, 0x08, 0x52, 0x04, 0x68, 0x6f, 0x6f, 0x64,
 	0x12, 0x1e, 0x0a, 0x0a, 0x72, 0x6f, 0x6f, 0x66, 0x47, 0x61, 0x72, 0x64, 0x65, 0x6e, 0x18, 0x29,
 	0x20, 0x01, 0x28, 0x08, 0x52, 0x0a, 0x72, 0x6f, 0x6f, 0x66, 0x47, 0x61, 0x72, 0x64, 0x65, 0x6e,
-	0x22, 0x34, 0x0a, 0x0e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69,
-	0x6c, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02,
-	0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x75, 0x6c, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
-	0x52, 0x04, 0x66, 0x75, 0x6c, 0x6c, 0x22, 0x45, 0x0a, 0x0f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x22, 0x0a, 0x05, 0x68, 0x6f, 0x75,
-	0x73, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65,
-	0x2e, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x52, 0x05, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x22, 0x33, 0x0a,
-	0x0d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x22,
-	0x0a, 0x05, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e,
-	0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x52, 0x05, 0x68, 0x6f, 0x75,
-	0x73, 0x65, 0x32, 0x48, 0x0a, 0x0c, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x12, 0x38, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x14, 0x2e, 0x68,
-	0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x1a, 0x16, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0x20, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74,
+	0x75, 0x73, 0x22, 0x34, 0x0a, 0x0e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74,
+	0x61, 0x69, 0x6c, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x75, 0x6c, 0x6c, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x04, 0x66, 0x75, 0x6c, 0x6c, 0x22, 0x6c, 0x0a, 0x0f, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x22, 0x0a, 0x05, 0x68,
+	0x6f, 0x75, 0x73, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x68, 0x6f, 0x75,
+	0x73, 0x65, 0x2e, 0x48, 0x6f, 0x75, 0x73, 0x65, 0x52, 0x05, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x12,
+	0x25, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x0d, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06,
+	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x33, 0x0a, 0x0d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x22, 0x0a, 0x05, 0x68, 0x6f, 0x75, 0x73, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0c, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x48,
+	0x6f, 0x75, 0x73, 0x65, 0x52, 0x05, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x32, 0x48, 0x0a, 0x0c, 0x68,
+	0x6f, 0x75, 0x73, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x38, 0x0a, 0x06, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x14, 0x2e, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x2e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x16, 0x2e, 0x68, 0x6f,
+	0x75, 0x73, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61,
+	0x69, 0x6c, 0x73, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1066,29 +1126,31 @@ func file_house_house_proto_rawDescGZIP() []byte {
 	return file_house_house_proto_rawDescData
 }
 
-var file_house_house_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_house_house_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_house_house_proto_goTypes = []interface{}{
 	(*Images)(nil),          // 0: house.Images
 	(*Image)(nil),           // 1: house.Image
 	(*House)(nil),           // 2: house.House
 	(*Amenities)(nil),       // 3: house.Amenities
-	(*RequestDetails)(nil),  // 4: house.RequestDetails
-	(*ResponseDetails)(nil), // 5: house.ResponseDetails
-	(*RequestCreate)(nil),   // 6: house.RequestCreate
+	(*Status)(nil),          // 4: house.Status
+	(*RequestDetails)(nil),  // 5: house.RequestDetails
+	(*ResponseDetails)(nil), // 6: house.ResponseDetails
+	(*RequestCreate)(nil),   // 7: house.RequestCreate
 }
 var file_house_house_proto_depIdxs = []int32{
 	1, // 0: house.Images.backdrops:type_name -> house.Image
 	1, // 1: house.Images.posters:type_name -> house.Image
 	3, // 2: house.House.amenities:type_name -> house.Amenities
 	2, // 3: house.ResponseDetails.house:type_name -> house.House
-	2, // 4: house.RequestCreate.house:type_name -> house.House
-	6, // 5: house.houseService.Create:input_type -> house.RequestCreate
-	5, // 6: house.houseService.Create:output_type -> house.ResponseDetails
-	6, // [6:7] is the sub-list for method output_type
-	5, // [5:6] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	4, // 4: house.ResponseDetails.status:type_name -> house.Status
+	2, // 5: house.RequestCreate.house:type_name -> house.House
+	7, // 6: house.houseService.Create:input_type -> house.RequestCreate
+	6, // 7: house.houseService.Create:output_type -> house.ResponseDetails
+	7, // [7:8] is the sub-list for method output_type
+	6, // [6:7] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_house_house_proto_init() }
@@ -1146,7 +1208,7 @@ func file_house_house_proto_init() {
 			}
 		}
 		file_house_house_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RequestDetails); i {
+			switch v := v.(*Status); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1158,7 +1220,7 @@ func file_house_house_proto_init() {
 			}
 		}
 		file_house_house_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResponseDetails); i {
+			switch v := v.(*RequestDetails); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1170,6 +1232,18 @@ func file_house_house_proto_init() {
 			}
 		}
 		file_house_house_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResponseDetails); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_house_house_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestCreate); i {
 			case 0:
 				return &v.state
@@ -1188,7 +1262,7 @@ func file_house_house_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_house_house_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

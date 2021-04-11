@@ -192,6 +192,11 @@ message Amenities {
     bool roofGarden = 41;
 }
 
+message Status {
+      // @inject_tag: json:"status",validate:"alpha,oneof='confirmed' 'pending' 'rejected'"
+      string status = 1;
+}
+
 
 
 
@@ -206,6 +211,7 @@ message RequestDetails {
 message ResponseDetails {
     string id = 1;
     House house = 2;
+    Status status = 3;
 }
 
 message RequestCreate {
