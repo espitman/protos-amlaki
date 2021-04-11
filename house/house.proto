@@ -62,6 +62,9 @@ message House {
 
     // @inject_tag: json:"typeOfToilet",validate:"alpha"
     string typeOfToilet = 17;
+
+    // @inject_tag: json:"amenities"
+    Amenities amenities = 18;
 }
 
 message Amenities {
