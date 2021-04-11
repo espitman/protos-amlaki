@@ -49,7 +49,7 @@ message House {
     string cabinetMaterial = 12;
 
     // @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
-    string warehouseSize = 13;
+    int32 warehouseSize = 13;
 
     // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n s'"
     string buildingDirection = 14;
@@ -59,7 +59,7 @@ message House {
 
     // @inject_tag: json:"coolingSystem",validate:"alpha"
     string coolingSystem = 16;
-    
+
     // @inject_tag: json:"typeOfToilet",validate:"alpha"
     string typeOfToilet = 17;
 }
