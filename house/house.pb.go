@@ -337,8 +337,8 @@ type Amenities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"pool",validate:"oneof=true false"
-	Pool bool `protobuf:"varint,1,opt,name=pool,proto3" json:"pool" validate:"oneof=true false"`
+	// @inject_tag: json:"pool"
+	Pool bool `protobuf:"varint,1,opt,name=pool,proto3" json:"pool"`
 	// @inject_tag: json:"equippedKitchen"
 	EquippedKitchen bool `protobuf:"varint,2,opt,name=equippedKitchen,proto3" json:"equippedKitchen"`
 	// @inject_tag: json:"gym"
