@@ -39,7 +39,7 @@ message House {
     // @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
     int32 numberOfFloors = 9;
 
-    // @inject_tag: json:"facadeMaterial",validate:"number,min=0,required"
+    // @inject_tag: json:"facadeMaterial",validate:"alpha,required"
     string facadeMaterial = 10;
 
     // @inject_tag: json:"floorMaterial",validate:"alpha"
@@ -51,7 +51,7 @@ message House {
     // @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
     int32 warehouseSize = 13;
 
-    // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n s'"
+    // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n' 's'"
     string buildingDirection = 14;
 
     // @inject_tag: json:"heatingSystem",validate:"alpha"

@@ -154,16 +154,16 @@ type House struct {
 	FloorsNo int32 `protobuf:"varint,8,opt,name=floorsNo,proto3" json:"floorsNo" validate:"number,min=0"`
 	// @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
 	NumberOfFloors int32 `protobuf:"varint,9,opt,name=numberOfFloors,proto3" json:"numberOfFloors" validate:"number,min=0,required"`
-	// @inject_tag: json:"facadeMaterial",validate:"number,min=0,required"
-	FacadeMaterial string `protobuf:"bytes,10,opt,name=facadeMaterial,proto3" json:"facadeMaterial" validate:"number,min=0,required"`
+	// @inject_tag: json:"facadeMaterial",validate:"alpha,required"
+	FacadeMaterial string `protobuf:"bytes,10,opt,name=facadeMaterial,proto3" json:"facadeMaterial" validate:"alpha,required"`
 	// @inject_tag: json:"floorMaterial",validate:"alpha"
 	FloorMaterial string `protobuf:"bytes,11,opt,name=floorMaterial,proto3" json:"floorMaterial" validate:"alpha"`
 	// @inject_tag: json:"cabinetMaterial",validate:"alpha"
 	CabinetMaterial string `protobuf:"bytes,12,opt,name=cabinetMaterial,proto3" json:"cabinetMaterial" validate:"alpha"`
 	// @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
 	WarehouseSize int32 `protobuf:"varint,13,opt,name=warehouseSize,proto3" json:"warehouseSize" validate:"number,min=0,required"`
-	// @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n s'"
-	BuildingDirection string `protobuf:"bytes,14,opt,name=buildingDirection,proto3" json:"buildingDirection" validate:"alpha,oneof='n s'"`
+	// @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n' 's'"
+	BuildingDirection string `protobuf:"bytes,14,opt,name=buildingDirection,proto3" json:"buildingDirection" validate:"alpha,oneof='n' 's'"`
 	// @inject_tag: json:"heatingSystem",validate:"alpha"
 	HeatingSystem string `protobuf:"bytes,15,opt,name=heatingSystem,proto3" json:"heatingSystem" validate:"alpha"`
 	// @inject_tag: json:"coolingSystem",validate:"alpha"
