@@ -867,8 +867,8 @@ type RequestCreate struct {
 
 	// @inject_tag: json:"house",validate:"required"
 	House *House `protobuf:"bytes,1,opt,name=house,proto3" json:"house" validate:"required"`
-	// json:"-"
-	Creator string `protobuf:"bytes,2,opt,name=creator,proto3" json:"creator,omitempty"`
+	// @inject_tag: json:"-"
+	Creator string `protobuf:"bytes,2,opt,name=creator,proto3" json:"-"`
 }
 
 func (x *RequestCreate) Reset() {

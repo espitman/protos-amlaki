@@ -210,7 +210,7 @@ message RequestCreate {
     // @inject_tag: json:"house",validate:"required"
     House house = 1;
 
-    // json:"-"
+    // @inject_tag: json:"-"
     string creator = 2;
 }
 
