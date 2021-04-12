@@ -16,7 +16,7 @@ message RequestDetails {
 
 message ResponseDetails {
     string id = 1;
-    Area title = 2;
+    Area area = 2;
     string creator = 4;
 }
 
