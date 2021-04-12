@@ -204,6 +204,7 @@ message ResponseDetails {
     string id = 1;
     House house = 2;
     string status = 3;
+    string creator = 4;
 }
 
 message RequestCreate {
