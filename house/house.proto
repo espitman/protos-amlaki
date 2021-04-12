@@ -203,13 +203,15 @@ message RequestDetails {
 message ResponseDetails {
     string id = 1;
     House house = 2;
-    // @inject_tag: json:"status",validate:"alpha,oneof='confirmed' 'pending' 'rejected'"
     string status = 3;
 }
 
 message RequestCreate {
     // @inject_tag: json:"house",validate:"required"
     House house = 1;
+
+    // json:"-"
+    string creator = 2;
 }
 
 service houseService {
