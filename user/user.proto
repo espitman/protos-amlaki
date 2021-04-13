@@ -1,0 +1,50 @@
+syntax = "proto3";
+package user;
+
+message User {
+    // @inject_tag: json:"email",validate:"required,email"
+    string email = 1;
+
+    // @inject_tag: json:"password",validate:"required"
+    string password = 2;
+    
+    // @inject_tag: json:"fname",validate:"required"
+    string fname = 3;
+
+    // @inject_tag: json:"lname",validate:"required"
+    string lname = 4;
+}
+
+message RequestRegisger {
+    User user = 1;
+}
+
+message RequestLogin {
+    // @inject_tag: json:"email",validate:"required"
+    string email = 1;
+
+   // @inject_tag: json:"password",validate:"required"
+   string password = 2;
+}
+
+message RequestVerify {
+    // @inject_tag: json:"token",validate:"required"
+    string token = 1;
+}
+
+message ResponseDetails {
+    string id = 1;
+    User user = 2;
+    string token = 3;
+}
+
+message VerifyResponseDetails {
+    string userId = 1;
+}
+
+
+service userService {
+    rpc Register(RequestRegisger) returns (ResponseDetails) {}
+    rpc Login(RequestLogin) returns (ResponseDetails) {}
+    rpc Verify(RequestVerify) returns (VerifyResponseDetails) {}
+}
