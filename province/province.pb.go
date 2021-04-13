@@ -34,8 +34,8 @@ type Province struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"title",validate:"alpha,required"
-	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alpha,required"`
+	// @inject_tag: json:"title",validate:"alphaunicode,required"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphaunicode,required"`
 	// @inject_tag: json:"name",validate:"alpha,required"
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" validate:"alpha,required"`
 }
