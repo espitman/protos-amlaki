@@ -34,12 +34,12 @@ type City struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"title",validate:"alpha, required"
-	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alpha, required"`
-	// @inject_tag: json:"name",validate:"alpha, required"
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" validate:"alpha, required"`
-	// @inject_tag: json:"province",validate:"alphanum, required"
-	Province string `protobuf:"bytes,3,opt,name=province,proto3" json:"province" validate:"alphanum, required"`
+	// @inject_tag: json:"title",validate:"alphanumunicode,required"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphanumunicode,required"`
+	// @inject_tag: json:"name",validate:"alpha,required"
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" validate:"alpha,required"`
+	// @inject_tag: json:"province",validate:"alphanum,required"
+	Province string `protobuf:"bytes,3,opt,name=province,proto3" json:"province" validate:"alphanum,required"`
 }
 
 func (x *City) Reset() {
