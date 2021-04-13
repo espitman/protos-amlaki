@@ -1,0 +1,37 @@
+syntax = "proto3";
+package province;
+
+
+
+message Province {
+    // @inject_tag: json:"title",validate:"alpha, required"
+    string title = 1;
+
+    // @inject_tag: json:"name",validate:"alpha, required"
+    string name = 2;
+}
+
+
+message RequestDetails {
+    // @inject_tag: json:"id",validate:"required"
+    string id = 1;
+}
+
+message ResponseDetails {
+    string id = 1;
+    Province province = 2;
+    string creator = 3;
+}
+
+message RequestCreate {
+    // @inject_tag: json:"province",validate:"required"
+    Province province = 1;
+
+    // @inject_tag: json:"-"
+    string creator = 2;
+}
+
+service provinceService {
+    rpc Create(RequestCreate) returns (ResponseDetails) {}
+}
+
