@@ -136,8 +136,8 @@ type House struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"title",validate:"required"
-	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"required"`
+	// @inject_tag: json:"title",validate:"alphanumunicode,required"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphanumunicode,required"`
 	// @inject_tag: json:"bedroomsCount",validate:"number,min=0"
 	BedroomsCount int32 `protobuf:"varint,2,opt,name=bedroomsCount,proto3" json:"bedroomsCount" validate:"number,min=0"`
 	// @inject_tag: json:"bathroomsCount",validate:"number,min=0"
