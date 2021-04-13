@@ -1,4 +1,4 @@
-package area
+package neighborhood
 
 import "encoding/json"
 

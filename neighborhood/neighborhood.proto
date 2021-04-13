@@ -1,9 +1,9 @@
 syntax = "proto3";
-package area;
+package neighborhood;
 
 
 
-message Area {
+message Neighborhood {
     // @inject_tag: json:"title",validate:"required"
     string title = 1;
 }
@@ -16,19 +16,19 @@ message RequestDetails {
 
 message ResponseDetails {
     string id = 1;
-    Area area = 2;
+    Neighborhood neighborhood = 2;
     string creator = 4;
 }
 
 message RequestCreate {
-    // @inject_tag: json:"area",validate:"required"
-    Area area = 1;
+    // @inject_tag: json:"neighborhood",validate:"required"
+    Neighborhood neighborhood = 1;
 
     // @inject_tag: json:"-"
     string creator = 2;
 }
 
-service areaService {
+service neighborhoodService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
 }
 
