@@ -38,8 +38,8 @@ type City struct {
 	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphanumunicode,required"`
 	// @inject_tag: json:"name",validate:"alpha,required"
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" validate:"alpha,required"`
-	// @inject_tag: json:"province",validate:"alphanum,required"
-	Province string `protobuf:"bytes,3,opt,name=province,proto3" json:"province" validate:"alphanum,required"`
+	// @inject_tag: bson:"province,omitempty",json:"province",validate:"alphanum,required"
+	Province string `protobuf:"bytes,3,opt,name=province,proto3" json:"province" bson:"province,omitempty" validate:"alphanum,required"`
 }
 
 func (x *City) Reset() {

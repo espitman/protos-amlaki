@@ -10,7 +10,7 @@ message City {
     // @inject_tag: json:"name",validate:"alpha,required"
     string name = 2;
 
-    // @inject_tag: json:"province",validate:"alphanum,required"
+    // @inject_tag: bson:"province,omitempty",json:"province",validate:"alphanum,required"
     string province = 3;
 }
 
