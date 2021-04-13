@@ -192,6 +192,18 @@ message Amenities {
     bool roofGarden = 41;
 }
 
+message Area {
+
+    // @inject_tag: json:"province",validate:"alphanum,required"
+    string province = 1;
+    
+    // @inject_tag: json:"city",validate:"alphanum,required"
+    string city = 2;
+    
+    // @inject_tag: json:"neighborhood",validate:"alphanum,required"
+    string neighborhood = 3;
+}
+
 message RequestDetails {
     // @inject_tag: json:"id",validate:"required"
     string id = 1;
@@ -203,16 +215,20 @@ message RequestDetails {
 message ResponseDetails {
     string id = 1;
     House house = 2;
-    string status = 3;
-    string creator = 4;
+    Area area = 3;
+    string status = 4;
+    string creator = 5;
 }
 
 message RequestCreate {
     // @inject_tag: json:"house",validate:"required"
     House house = 1;
 
+    // @inject_tag: json:"area",validate:"required"
+    Area area = 2;
+
     // @inject_tag: json:"-"
-    string creator = 2;
+    string creator = 3;
 }
 
 service houseService {
