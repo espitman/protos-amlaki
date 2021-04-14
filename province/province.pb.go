@@ -254,6 +254,53 @@ func (x *RequestCreate) GetCreator() string {
 	return ""
 }
 
+type ResponseIsExist struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Exist bool `protobuf:"varint,1,opt,name=exist,proto3" json:"exist,omitempty"`
+}
+
+func (x *ResponseIsExist) Reset() {
+	*x = ResponseIsExist{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_province_province_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResponseIsExist) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResponseIsExist) ProtoMessage() {}
+
+func (x *ResponseIsExist) ProtoReflect() protoreflect.Message {
+	mi := &file_province_province_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResponseIsExist.ProtoReflect.Descriptor instead.
+func (*ResponseIsExist) Descriptor() ([]byte, []int) {
+	return file_province_province_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ResponseIsExist) GetExist() bool {
+	if x != nil {
+		return x.Exist
+	}
+	return false
+}
+
 var File_province_province_proto protoreflect.FileDescriptor
 
 var file_province_province_proto_rawDesc = []byte{
@@ -277,12 +324,19 @@ var file_province_province_proto_rawDesc = []byte{
 	0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x52,
 	0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65,
 	0x61, 0x74, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61,
-	0x74, 0x6f, 0x72, 0x32, 0x51, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3e, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x12, 0x17, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76,
-	0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x73, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x6f, 0x72, 0x22, 0x27, 0x0a, 0x0f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49,
+	0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x32, 0x93, 0x01, 0x0a,
+	0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x12, 0x3e, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x17, 0x2e, 0x70, 0x72, 0x6f,
+	0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22, 0x00,
+	0x12, 0x40, 0x0a, 0x07, 0x69, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x18, 0x2e, 0x70, 0x72,
+	0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65,
+	0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65,
+	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74,
+	0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -297,20 +351,23 @@ func file_province_province_proto_rawDescGZIP() []byte {
 	return file_province_province_proto_rawDescData
 }
 
-var file_province_province_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_province_province_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_province_province_proto_goTypes = []interface{}{
 	(*Province)(nil),        // 0: province.Province
 	(*RequestDetails)(nil),  // 1: province.RequestDetails
 	(*ResponseDetails)(nil), // 2: province.ResponseDetails
 	(*RequestCreate)(nil),   // 3: province.RequestCreate
+	(*ResponseIsExist)(nil), // 4: province.ResponseIsExist
 }
 var file_province_province_proto_depIdxs = []int32{
 	0, // 0: province.ResponseDetails.province:type_name -> province.Province
 	0, // 1: province.RequestCreate.province:type_name -> province.Province
 	3, // 2: province.provinceService.Create:input_type -> province.RequestCreate
-	2, // 3: province.provinceService.Create:output_type -> province.ResponseDetails
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
+	1, // 3: province.provinceService.isExist:input_type -> province.RequestDetails
+	2, // 4: province.provinceService.Create:output_type -> province.ResponseDetails
+	4, // 5: province.provinceService.isExist:output_type -> province.ResponseIsExist
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
@@ -370,6 +427,18 @@ func file_province_province_proto_init() {
 				return nil
 			}
 		}
+		file_province_province_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResponseIsExist); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -377,7 +446,7 @@ func file_province_province_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_province_province_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -404,6 +473,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ProvinceServiceClient interface {
 	Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error)
+	IsExist(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error)
 }
 
 type provinceServiceClient struct {
@@ -423,9 +493,19 @@ func (c *provinceServiceClient) Create(ctx context.Context, in *RequestCreate, o
 	return out, nil
 }
 
+func (c *provinceServiceClient) IsExist(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error) {
+	out := new(ResponseIsExist)
+	err := c.cc.Invoke(ctx, "/province.provinceService/isExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProvinceServiceServer is the server API for ProvinceService service.
 type ProvinceServiceServer interface {
 	Create(context.Context, *RequestCreate) (*ResponseDetails, error)
+	IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error)
 }
 
 // UnimplementedProvinceServiceServer can be embedded to have forward compatible implementations.
@@ -434,6 +514,9 @@ type UnimplementedProvinceServiceServer struct {
 
 func (*UnimplementedProvinceServiceServer) Create(context.Context, *RequestCreate) (*ResponseDetails, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
+func (*UnimplementedProvinceServiceServer) IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsExist not implemented")
 }
 
 func RegisterProvinceServiceServer(s *grpc.Server, srv ProvinceServiceServer) {
@@ -458,6 +541,24 @@ func _ProvinceService_Create_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProvinceService_IsExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestDetails)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProvinceServiceServer).IsExist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/province.provinceService/IsExist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProvinceServiceServer).IsExist(ctx, req.(*RequestDetails))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ProvinceService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "province.provinceService",
 	HandlerType: (*ProvinceServiceServer)(nil),
@@ -465,6 +566,10 @@ var _ProvinceService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Create",
 			Handler:    _ProvinceService_Create_Handler,
+		},
+		{
+			MethodName: "isExist",
+			Handler:    _ProvinceService_IsExist_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
