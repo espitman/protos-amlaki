@@ -38,8 +38,18 @@ message ResponseIsExist {
     bool exist = 1;
 }
 
+message RequestCheckProvinceHasCityByName {
+    string provinceId = 1;
+    string cityName = 2;
+}
+
+message ResponseCheckProvinceHasCityByName {
+    bool has = 1;
+}
+
 service cityService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
+    rpc checkProvinceHasCityByName(RequestCheckProvinceHasCityByName) returns (ResponseCheckProvinceHasCityByName) {}
 }
 
