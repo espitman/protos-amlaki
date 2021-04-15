@@ -34,8 +34,8 @@ type Neighborhood struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// @inject_tag: json:"title",validate:"alphanumunicode,required"
-	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphanumunicode,required"`
+	// @inject_tag: json:"title",validate:"alphanumunicode=32+95+45,required"
+	Title string `protobuf:"bytes,1,opt,name=title,proto3" json:"title" validate:"alphanumunicode=32+95+45,required"`
 	// @inject_tag: json:"name",validate:"alpha,required"
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name" validate:"alpha,required"`
 	// @inject_tag: json:"province",validate:"alphanum,required"
