@@ -43,6 +43,6 @@ message RequestCheckDuplocatedNameAndTitle {
 service provinceService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
-    rpc checkDuplocatedNameAndTitle(RequestDetails) returns (ResponseIsExist) {}
+    rpc checkDuplicatedNameAndTitle(RequestDetails) returns (ResponseIsExist) {}
 }
 
