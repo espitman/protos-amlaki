@@ -22,3 +22,10 @@ func (t *RequestCreate) Unmarshal(entry interface{}) RequestCreate {
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *RequestCheckDuplicatedNameAndTitle) Unmarshal(entry interface{}) RequestCheckDuplicatedNameAndTitle {
+	obj, _ := json.Marshal(entry)
+	response := RequestCheckDuplicatedNameAndTitle{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
