@@ -301,7 +301,7 @@ func (x *ResponseIsExist) GetExist() bool {
 	return false
 }
 
-type RequestCheckDuplocatedNameAndTitle struct {
+type RequestCheckDuplicatedNameAndTitle struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -309,8 +309,8 @@ type RequestCheckDuplocatedNameAndTitle struct {
 	Province *Province `protobuf:"bytes,1,opt,name=province,proto3" json:"province,omitempty"`
 }
 
-func (x *RequestCheckDuplocatedNameAndTitle) Reset() {
-	*x = RequestCheckDuplocatedNameAndTitle{}
+func (x *RequestCheckDuplicatedNameAndTitle) Reset() {
+	*x = RequestCheckDuplicatedNameAndTitle{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_province_province_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -318,13 +318,13 @@ func (x *RequestCheckDuplocatedNameAndTitle) Reset() {
 	}
 }
 
-func (x *RequestCheckDuplocatedNameAndTitle) String() string {
+func (x *RequestCheckDuplicatedNameAndTitle) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*RequestCheckDuplocatedNameAndTitle) ProtoMessage() {}
+func (*RequestCheckDuplicatedNameAndTitle) ProtoMessage() {}
 
-func (x *RequestCheckDuplocatedNameAndTitle) ProtoReflect() protoreflect.Message {
+func (x *RequestCheckDuplicatedNameAndTitle) ProtoReflect() protoreflect.Message {
 	mi := &file_province_province_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -336,12 +336,12 @@ func (x *RequestCheckDuplocatedNameAndTitle) ProtoReflect() protoreflect.Message
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use RequestCheckDuplocatedNameAndTitle.ProtoReflect.Descriptor instead.
-func (*RequestCheckDuplocatedNameAndTitle) Descriptor() ([]byte, []int) {
+// Deprecated: Use RequestCheckDuplicatedNameAndTitle.ProtoReflect.Descriptor instead.
+func (*RequestCheckDuplicatedNameAndTitle) Descriptor() ([]byte, []int) {
 	return file_province_province_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *RequestCheckDuplocatedNameAndTitle) GetProvince() *Province {
+func (x *RequestCheckDuplicatedNameAndTitle) GetProvince() *Province {
 	if x != nil {
 		return x.Province
 	}
@@ -375,11 +375,11 @@ var file_province_province_proto_rawDesc = []byte{
 	0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x22, 0x54, 0x0a, 0x22,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x44, 0x75, 0x70, 0x6c,
-	0x6f, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64, 0x54, 0x69, 0x74,
+	0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64, 0x54, 0x69, 0x74,
 	0x6c, 0x65, 0x12, 0x2e, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e,
 	0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e,
-	0x63, 0x65, 0x32, 0xe9, 0x01, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53,
+	0x63, 0x65, 0x32, 0xfd, 0x01, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3e, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
 	0x12, 0x17, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76,
@@ -388,13 +388,14 @@ var file_province_province_proto_rawDesc = []byte{
 	0x74, 0x12, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x19, 0x2e, 0x70, 0x72,
 	0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49,
-	0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x1b, 0x63, 0x68, 0x65, 0x63,
+	0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x68, 0x0a, 0x1b, 0x63, 0x68, 0x65, 0x63,
 	0x6b, 0x44, 0x75, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41,
-	0x6e, 0x64, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e,
-	0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
-	0x73, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x64, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x2c, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e,
+	0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x44,
+	0x75, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64,
+	0x54, 0x69, 0x74, 0x6c, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65,
+	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74,
+	0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -416,15 +417,15 @@ var file_province_province_proto_goTypes = []interface{}{
 	(*ResponseDetails)(nil),                    // 2: province.ResponseDetails
 	(*RequestCreate)(nil),                      // 3: province.RequestCreate
 	(*ResponseIsExist)(nil),                    // 4: province.ResponseIsExist
-	(*RequestCheckDuplocatedNameAndTitle)(nil), // 5: province.RequestCheckDuplocatedNameAndTitle
+	(*RequestCheckDuplicatedNameAndTitle)(nil), // 5: province.RequestCheckDuplicatedNameAndTitle
 }
 var file_province_province_proto_depIdxs = []int32{
 	0, // 0: province.ResponseDetails.province:type_name -> province.Province
 	0, // 1: province.RequestCreate.province:type_name -> province.Province
-	0, // 2: province.RequestCheckDuplocatedNameAndTitle.province:type_name -> province.Province
+	0, // 2: province.RequestCheckDuplicatedNameAndTitle.province:type_name -> province.Province
 	3, // 3: province.provinceService.Create:input_type -> province.RequestCreate
 	1, // 4: province.provinceService.isExist:input_type -> province.RequestDetails
-	1, // 5: province.provinceService.checkDuplicatedNameAndTitle:input_type -> province.RequestDetails
+	5, // 5: province.provinceService.checkDuplicatedNameAndTitle:input_type -> province.RequestCheckDuplicatedNameAndTitle
 	2, // 6: province.provinceService.Create:output_type -> province.ResponseDetails
 	4, // 7: province.provinceService.isExist:output_type -> province.ResponseIsExist
 	4, // 8: province.provinceService.checkDuplicatedNameAndTitle:output_type -> province.ResponseIsExist
@@ -502,7 +503,7 @@ func file_province_province_proto_init() {
 			}
 		}
 		file_province_province_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RequestCheckDuplocatedNameAndTitle); i {
+			switch v := v.(*RequestCheckDuplicatedNameAndTitle); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -548,7 +549,7 @@ const _ = grpc.SupportPackageIsVersion6
 type ProvinceServiceClient interface {
 	Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error)
 	IsExist(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error)
-	CheckDuplicatedNameAndTitle(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error)
+	CheckDuplicatedNameAndTitle(ctx context.Context, in *RequestCheckDuplicatedNameAndTitle, opts ...grpc.CallOption) (*ResponseIsExist, error)
 }
 
 type provinceServiceClient struct {
@@ -577,7 +578,7 @@ func (c *provinceServiceClient) IsExist(ctx context.Context, in *RequestDetails,
 	return out, nil
 }
 
-func (c *provinceServiceClient) CheckDuplicatedNameAndTitle(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error) {
+func (c *provinceServiceClient) CheckDuplicatedNameAndTitle(ctx context.Context, in *RequestCheckDuplicatedNameAndTitle, opts ...grpc.CallOption) (*ResponseIsExist, error) {
 	out := new(ResponseIsExist)
 	err := c.cc.Invoke(ctx, "/province.provinceService/checkDuplicatedNameAndTitle", in, out, opts...)
 	if err != nil {
@@ -590,7 +591,7 @@ func (c *provinceServiceClient) CheckDuplicatedNameAndTitle(ctx context.Context,
 type ProvinceServiceServer interface {
 	Create(context.Context, *RequestCreate) (*ResponseDetails, error)
 	IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error)
-	CheckDuplicatedNameAndTitle(context.Context, *RequestDetails) (*ResponseIsExist, error)
+	CheckDuplicatedNameAndTitle(context.Context, *RequestCheckDuplicatedNameAndTitle) (*ResponseIsExist, error)
 }
 
 // UnimplementedProvinceServiceServer can be embedded to have forward compatible implementations.
@@ -603,7 +604,7 @@ func (*UnimplementedProvinceServiceServer) Create(context.Context, *RequestCreat
 func (*UnimplementedProvinceServiceServer) IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method IsExist not implemented")
 }
-func (*UnimplementedProvinceServiceServer) CheckDuplicatedNameAndTitle(context.Context, *RequestDetails) (*ResponseIsExist, error) {
+func (*UnimplementedProvinceServiceServer) CheckDuplicatedNameAndTitle(context.Context, *RequestCheckDuplicatedNameAndTitle) (*ResponseIsExist, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckDuplicatedNameAndTitle not implemented")
 }
 
@@ -648,7 +649,7 @@ func _ProvinceService_IsExist_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 func _ProvinceService_CheckDuplicatedNameAndTitle_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RequestDetails)
+	in := new(RequestCheckDuplicatedNameAndTitle)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -660,7 +661,7 @@ func _ProvinceService_CheckDuplicatedNameAndTitle_Handler(srv interface{}, ctx c
 		FullMethod: "/province.provinceService/CheckDuplicatedNameAndTitle",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProvinceServiceServer).CheckDuplicatedNameAndTitle(ctx, req.(*RequestDetails))
+		return srv.(ProvinceServiceServer).CheckDuplicatedNameAndTitle(ctx, req.(*RequestCheckDuplicatedNameAndTitle))
 	}
 	return interceptor(ctx, in, info, handler)
 }

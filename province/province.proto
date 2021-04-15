@@ -35,7 +35,7 @@ message ResponseIsExist {
     bool exist = 1;
 }
 
-message RequestCheckDuplocatedNameAndTitle {
+message RequestCheckDuplicatedNameAndTitle {
     Province province = 1;
 }
 
@@ -43,6 +43,6 @@ message RequestCheckDuplocatedNameAndTitle {
 service provinceService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
-    rpc checkDuplicatedNameAndTitle(RequestDetails) returns (ResponseIsExist) {}
+    rpc checkDuplicatedNameAndTitle(RequestCheckDuplicatedNameAndTitle) returns (ResponseIsExist) {}
 }
 
