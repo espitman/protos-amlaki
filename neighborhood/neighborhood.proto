@@ -46,7 +46,7 @@ message ResponseCheckExistByProvinceIdAndCityId {
 }
 
 message RequestCheckValidNeighborhood {
-    string name = 1;
+    string neighborhood = 1;
     string province = 2;
     string city = 3;
 }
