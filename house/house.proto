@@ -12,59 +12,77 @@ message Image {
 }
 
 message House {
-    // @inject_tag: json:"title",validate:"alphanumunicode,required"
+    // @inject_tag: json:"title",validate:"required"
     string title = 1;
 
+     // @inject_tag: json:"saleType",validate:"alpha,oneof='sale' 'fullMortgage' 'mortgageAndRent',required"
+     string saleType = 2;
+
+    // @inject_tag: json:"description"
+    string description = 3;
+
+    // @inject_tag: json:"address",validate:"required"
+    string address = 4;
+
+    // @inject_tag: json:"location"
+    Location location = 5;
+
+    // @inject_tag: json:"districtNo"
+    int32 districtNo = 6;
+
     // @inject_tag: json:"bedroomsCount",validate:"number,min=0"
-    int32 bedroomsCount = 2;
+    int32 bedroomsCount = 7;
 
     // @inject_tag: json:"bathroomsCount",validate:"number,min=0"
-    int32 bathroomsCount = 3;
+    int32 bathroomsCount = 8;
 
     // @inject_tag: json:"garagesCount",validate:"number,min=0"
-    int32 garagesCount = 4;
+    int32 garagesCount = 9;
 
     // @inject_tag: json:"builtYear",validate:"number,min=0,required"
-    int32 builtYear = 5;
+    int32 builtYear = 10;
 
     // @inject_tag: json:"areaSize",validate:"number,min=0"
-    int32 areaSize = 6;
+    int32 areaSize = 11;
 
     // @inject_tag: json:"postalCode",validate:"alphanum"
-    string postalCode = 7;
+    string postalCode = 12;
 
     // @inject_tag: json:"floorsNo",validate:"number,min=0"
-    int32 floorsNo = 8;
+    int32 floorsNo = 13;
 
     // @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
-    int32 numberOfFloors = 9;
+    int32 numberOfFloors = 14;
 
     // @inject_tag: json:"facadeMaterial",validate:"alpha,required"
-    string facadeMaterial = 10;
+    string facadeMaterial = 15;
 
     // @inject_tag: json:"floorMaterial",validate:"alpha"
-    string floorMaterial = 11;
+    string floorMaterial = 16;
 
     // @inject_tag: json:"cabinetMaterial",validate:"alpha"
-    string cabinetMaterial = 12;
+    string cabinetMaterial = 17;
 
     // @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
-    int32 warehouseSize = 13;
+    int32 warehouseSize = 18;
 
     // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n' 's'"
-    string buildingDirection = 14;
+    string buildingDirection = 19;
 
     // @inject_tag: json:"heatingSystem",validate:"alpha"
-    string heatingSystem = 15;
+    string heatingSystem = 20;
 
     // @inject_tag: json:"coolingSystem",validate:"alpha"
-    string coolingSystem = 16;
+    string coolingSystem = 21;
 
-    // @inject_tag: json:"typeOfToilet",validate:"alpha"
-    string typeOfToilet = 17;
+    // @inject_tag: json:"typeOfToilet",validate:"alpha,oneof='irani' 'farangi' 'both'"
+    string typeOfToilet = 22;
 
     // @inject_tag: json:"amenities"
-    Amenities amenities = 18;
+    Amenities amenities = 23;
+
+    // @inject_tag: json:"price",validate:"required"
+    Price price = 24;
 }
 
 message Amenities {
@@ -202,6 +220,26 @@ message Area {
     
     // @inject_tag: json:"neighborhood",validate:"alphanum,required"
     string neighborhood = 3;
+}
+
+message Price {
+    // @inject_tag: json:"sale",validate:"number,min=0"
+    int32 sale = 1;
+
+    // @inject_tag: json:"mortgae",validate:"number,min=0"
+    int32 mortgae = 2;
+    
+    // @inject_tag: json:"rent",validate:"number,min=0"
+    int32 rent = 3;
+}
+
+message Location {
+    
+    // @inject_tag: json:"latitude",validate:"latitude,required"
+    double latitude = 1;
+    
+    // @inject_tag: json:"longitude",validate:"longitude,required"
+    double longitude = 2;
 }
 
 message RequestDetails {
