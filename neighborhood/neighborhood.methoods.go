@@ -29,3 +29,10 @@ func (t *RequestCheckExistByProvinceIdAndCityId) Unmarshal(entry interface{}) Re
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *RequestCheckValidNeighborhood) Unmarshal(entry interface{}) RequestCheckValidNeighborhood {
+	obj, _ := json.Marshal(entry)
+	response := RequestCheckValidNeighborhood{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
