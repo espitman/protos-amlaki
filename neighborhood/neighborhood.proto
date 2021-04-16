@@ -45,8 +45,20 @@ message ResponseCheckExistByProvinceIdAndCityId {
     bool isExist = 1;
 }
 
+message RequestCheckValidNeighborhood {
+    string name = 1;
+    string province = 2;
+    string city = 3;
+}
+
+message ResponseCheckValidNeighborhood {
+    bool isValid = 1;
+}
+
+
 service neighborhoodService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc CheckExistByProvinceIdAndCityId(RequestCheckExistByProvinceIdAndCityId) returns (ResponseCheckExistByProvinceIdAndCityId) {}
+    rpc CheckValidNeighborhood(RequestCheckValidNeighborhood) returns (ResponseCheckValidNeighborhood) {}
 }
 
