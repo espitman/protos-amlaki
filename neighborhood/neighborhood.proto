@@ -37,7 +37,16 @@ message RequestCreate {
     string creator = 2;
 }
 
+message RequestCheckExistByProvinceIdAndCityId {
+    Neighborhood neighborhood = 1;
+}
+
+message ResponseCheckExistByProvinceIdAndCityId {
+    bool isExist = 1;
+}
+
 service neighborhoodService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
+    rpc CheckExistByProvinceIdAndCityId(RequestCheckExistByProvinceIdAndCityId) returns (ResponseCheckExistByProvinceIdAndCityId) {}
 }
 
