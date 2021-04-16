@@ -22,3 +22,10 @@ func (t *RequestCreate) Unmarshal(entry interface{}) RequestCreate {
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *CheckExistByProvinceIdAndCityId) Unmarshal(entry interface{}) CheckExistByProvinceIdAndCityId {
+	obj, _ := json.Marshal(entry)
+	response := CheckExistByProvinceIdAndCityId{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
