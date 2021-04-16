@@ -8,3 +8,17 @@ func (t *ResponseDetails) Unmarshal(entry interface{}) ResponseDetails {
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *RequestRegisger) Unmarshal(entry interface{}) RequestRegisger {
+	obj, _ := json.Marshal(entry)
+	response := RequestRegisger{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
+
+func (t *RequestLogin) Unmarshal(entry interface{}) RequestLogin {
+	obj, _ := json.Marshal(entry)
+	response := RequestLogin{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
