@@ -48,7 +48,7 @@ message RequestList {
 }
 
 message ResponseList {
-    repeated Province provinces = 1; 
+    repeated ResponseDetails provinces = 1; 
 }
 
 
