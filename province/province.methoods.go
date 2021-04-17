@@ -29,3 +29,10 @@ func (t *RequestCheckDuplicatedNameAndTitle) Unmarshal(entry interface{}) Reques
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *ResponseList) Unmarshal(entry interface{}) ResponseList {
+	obj, _ := json.Marshal(entry)
+	response := ResponseList{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
