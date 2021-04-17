@@ -412,6 +412,110 @@ func (x *ResponseCheckProvinceHasCityByName) GetHas() bool {
 	return false
 }
 
+type RequestList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: json:"count",validate:"number,min=10,required"
+	Count int32 `protobuf:"varint,1,opt,name=count,proto3" json:"count" validate:"number,min=10,required"`
+	// @inject_tag: json:"page",validate:"number,min=1,required"
+	Page int32 `protobuf:"varint,2,opt,name=page,proto3" json:"page" validate:"number,min=1,required"`
+}
+
+func (x *RequestList) Reset() {
+	*x = RequestList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_city_city_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RequestList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestList) ProtoMessage() {}
+
+func (x *RequestList) ProtoReflect() protoreflect.Message {
+	mi := &file_city_city_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestList.ProtoReflect.Descriptor instead.
+func (*RequestList) Descriptor() ([]byte, []int) {
+	return file_city_city_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *RequestList) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+func (x *RequestList) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+type ResponseList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Cities []*ResponseDetails `protobuf:"bytes,1,rep,name=cities,proto3" json:"cities,omitempty"`
+}
+
+func (x *ResponseList) Reset() {
+	*x = ResponseList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_city_city_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResponseList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResponseList) ProtoMessage() {}
+
+func (x *ResponseList) ProtoReflect() protoreflect.Message {
+	mi := &file_city_city_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResponseList.ProtoReflect.Descriptor instead.
+func (*ResponseList) Descriptor() ([]byte, []int) {
+	return file_city_city_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ResponseList) GetCities() []*ResponseDetails {
+	if x != nil {
+		return x.Cities
+	}
+	return nil
+}
+
 var File_city_city_proto protoreflect.FileDescriptor
 
 var file_city_city_proto_rawDesc = []byte{
@@ -446,22 +550,33 @@ var file_city_city_proto_rawDesc = []byte{
 	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e,
 	0x63, 0x65, 0x48, 0x61, 0x73, 0x43, 0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12,
 	0x10, 0x0a, 0x03, 0x68, 0x61, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x03, 0x68, 0x61,
-	0x73, 0x32, 0xf2, 0x01, 0x0a, 0x0b, 0x63, 0x69, 0x74, 0x79, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x12, 0x36, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x63, 0x69,
-	0x74, 0x79, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x1a, 0x15, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22, 0x00, 0x12, 0x38, 0x0a, 0x07, 0x69, 0x73, 0x45,
-	0x78, 0x69, 0x73, 0x74, 0x12, 0x14, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x15, 0x2e, 0x63, 0x69, 0x74,
-	0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x1a, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f, 0x76,
-	0x69, 0x6e, 0x63, 0x65, 0x48, 0x61, 0x73, 0x43, 0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61, 0x6d,
-	0x65, 0x12, 0x27, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x48, 0x61, 0x73,
-	0x43, 0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x1a, 0x28, 0x2e, 0x63, 0x69, 0x74,
-	0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x50,
-	0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x48, 0x61, 0x73, 0x43, 0x69, 0x74, 0x79, 0x42, 0x79,
-	0x4e, 0x61, 0x6d, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x22, 0x37, 0x0a, 0x0b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x69, 0x73, 0x74,
+	0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52,
+	0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x22, 0x3d, 0x0a, 0x0c, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x2d, 0x0a, 0x06, 0x63, 0x69,
+	0x74, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x15, 0x2e, 0x63, 0x69, 0x74,
+	0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c,
+	0x73, 0x52, 0x06, 0x63, 0x69, 0x74, 0x69, 0x65, 0x73, 0x32, 0xa3, 0x02, 0x0a, 0x0b, 0x63, 0x69,
+	0x74, 0x79, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x36, 0x0a, 0x06, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x12, 0x13, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x15, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22,
+	0x00, 0x12, 0x38, 0x0a, 0x07, 0x69, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x14, 0x2e, 0x63,
+	0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69,
+	0x6c, 0x73, 0x1a, 0x15, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x71, 0x0a, 0x1a, 0x63,
+	0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x48, 0x61, 0x73, 0x43,
+	0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x27, 0x2e, 0x63, 0x69, 0x74, 0x79,
+	0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f,
+	0x76, 0x69, 0x6e, 0x63, 0x65, 0x48, 0x61, 0x73, 0x43, 0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61,
+	0x6d, 0x65, 0x1a, 0x28, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x48,
+	0x61, 0x73, 0x43, 0x69, 0x74, 0x79, 0x42, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x00, 0x12, 0x2f,
+	0x0a, 0x04, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x11, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x1a, 0x12, 0x2e, 0x63, 0x69, 0x74, 0x79,
+	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x00, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -476,7 +591,7 @@ func file_city_city_proto_rawDescGZIP() []byte {
 	return file_city_city_proto_rawDescData
 }
 
-var file_city_city_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_city_city_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_city_city_proto_goTypes = []interface{}{
 	(*City)(nil),                               // 0: city.City
 	(*RequestDetails)(nil),                     // 1: city.RequestDetails
@@ -485,21 +600,26 @@ var file_city_city_proto_goTypes = []interface{}{
 	(*ResponseIsExist)(nil),                    // 4: city.ResponseIsExist
 	(*RequestCheckProvinceHasCityByName)(nil),  // 5: city.RequestCheckProvinceHasCityByName
 	(*ResponseCheckProvinceHasCityByName)(nil), // 6: city.ResponseCheckProvinceHasCityByName
+	(*RequestList)(nil),                        // 7: city.RequestList
+	(*ResponseList)(nil),                       // 8: city.ResponseList
 }
 var file_city_city_proto_depIdxs = []int32{
 	0, // 0: city.ResponseDetails.city:type_name -> city.City
 	0, // 1: city.RequestCreate.city:type_name -> city.City
-	3, // 2: city.cityService.Create:input_type -> city.RequestCreate
-	1, // 3: city.cityService.isExist:input_type -> city.RequestDetails
-	5, // 4: city.cityService.checkProvinceHasCityByName:input_type -> city.RequestCheckProvinceHasCityByName
-	2, // 5: city.cityService.Create:output_type -> city.ResponseDetails
-	4, // 6: city.cityService.isExist:output_type -> city.ResponseIsExist
-	6, // 7: city.cityService.checkProvinceHasCityByName:output_type -> city.ResponseCheckProvinceHasCityByName
-	5, // [5:8] is the sub-list for method output_type
-	2, // [2:5] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2, // 2: city.ResponseList.cities:type_name -> city.ResponseDetails
+	3, // 3: city.cityService.Create:input_type -> city.RequestCreate
+	1, // 4: city.cityService.isExist:input_type -> city.RequestDetails
+	5, // 5: city.cityService.checkProvinceHasCityByName:input_type -> city.RequestCheckProvinceHasCityByName
+	7, // 6: city.cityService.list:input_type -> city.RequestList
+	2, // 7: city.cityService.Create:output_type -> city.ResponseDetails
+	4, // 8: city.cityService.isExist:output_type -> city.ResponseIsExist
+	6, // 9: city.cityService.checkProvinceHasCityByName:output_type -> city.ResponseCheckProvinceHasCityByName
+	8, // 10: city.cityService.list:output_type -> city.ResponseList
+	7, // [7:11] is the sub-list for method output_type
+	3, // [3:7] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_city_city_proto_init() }
@@ -592,6 +712,30 @@ func file_city_city_proto_init() {
 				return nil
 			}
 		}
+		file_city_city_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RequestList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_city_city_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResponseList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -599,7 +743,7 @@ func file_city_city_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_city_city_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -628,6 +772,7 @@ type CityServiceClient interface {
 	Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error)
 	IsExist(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error)
 	CheckProvinceHasCityByName(ctx context.Context, in *RequestCheckProvinceHasCityByName, opts ...grpc.CallOption) (*ResponseCheckProvinceHasCityByName, error)
+	List(ctx context.Context, in *RequestList, opts ...grpc.CallOption) (*ResponseList, error)
 }
 
 type cityServiceClient struct {
@@ -665,11 +810,21 @@ func (c *cityServiceClient) CheckProvinceHasCityByName(ctx context.Context, in *
 	return out, nil
 }
 
+func (c *cityServiceClient) List(ctx context.Context, in *RequestList, opts ...grpc.CallOption) (*ResponseList, error) {
+	out := new(ResponseList)
+	err := c.cc.Invoke(ctx, "/city.cityService/list", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CityServiceServer is the server API for CityService service.
 type CityServiceServer interface {
 	Create(context.Context, *RequestCreate) (*ResponseDetails, error)
 	IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error)
 	CheckProvinceHasCityByName(context.Context, *RequestCheckProvinceHasCityByName) (*ResponseCheckProvinceHasCityByName, error)
+	List(context.Context, *RequestList) (*ResponseList, error)
 }
 
 // UnimplementedCityServiceServer can be embedded to have forward compatible implementations.
@@ -684,6 +839,9 @@ func (*UnimplementedCityServiceServer) IsExist(context.Context, *RequestDetails)
 }
 func (*UnimplementedCityServiceServer) CheckProvinceHasCityByName(context.Context, *RequestCheckProvinceHasCityByName) (*ResponseCheckProvinceHasCityByName, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckProvinceHasCityByName not implemented")
+}
+func (*UnimplementedCityServiceServer) List(context.Context, *RequestList) (*ResponseList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
 
 func RegisterCityServiceServer(s *grpc.Server, srv CityServiceServer) {
@@ -744,6 +902,24 @@ func _CityService_CheckProvinceHasCityByName_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CityService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestList)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CityServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/city.cityService/List",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CityServiceServer).List(ctx, req.(*RequestList))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _CityService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "city.cityService",
 	HandlerType: (*CityServiceServer)(nil),
@@ -759,6 +935,10 @@ var _CityService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "checkProvinceHasCityByName",
 			Handler:    _CityService_CheckProvinceHasCityByName_Handler,
+		},
+		{
+			MethodName: "list",
+			Handler:    _CityService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

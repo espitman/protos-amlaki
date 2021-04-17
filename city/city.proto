@@ -47,9 +47,22 @@ message ResponseCheckProvinceHasCityByName {
     bool has = 1;
 }
 
+message RequestList {
+    // @inject_tag: json:"count",validate:"number,min=10,required"
+    int32 count = 1;
+
+    // @inject_tag: json:"page",validate:"number,min=1,required"
+    int32 page = 2;
+}
+
+message ResponseList {
+    repeated ResponseDetails cities = 1; 
+}
+
 service cityService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
     rpc checkProvinceHasCityByName(RequestCheckProvinceHasCityByName) returns (ResponseCheckProvinceHasCityByName) {}
+    rpc list(RequestList) returns (ResponseList) {}
 }
 
