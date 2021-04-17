@@ -39,10 +39,23 @@ message RequestCheckDuplicatedNameAndTitle {
     Province province = 1;
 }
 
+message RequestList {
+    // @inject_tag: json:"count",validate:"number,min=10,required"
+    int32 count = 1;
+
+    // @inject_tag: json:"page",validate:"number,min=1,required"
+    int32 page = 2;
+}
+
+message ResponseList {
+    repeated Province provinces = 1; 
+}
+
 
 service provinceService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
     rpc checkDuplicatedNameAndTitle(RequestCheckDuplicatedNameAndTitle) returns (ResponseIsExist) {}
+    rpc list(RequestList) returns (ResponseList) {}
 }
 

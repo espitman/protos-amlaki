@@ -348,6 +348,110 @@ func (x *RequestCheckDuplicatedNameAndTitle) GetProvince() *Province {
 	return nil
 }
 
+type RequestList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// @inject_tag: json:"count",validate:"number,min=10,required"
+	Count int32 `protobuf:"varint,1,opt,name=count,proto3" json:"count" validate:"number,min=10,required"`
+	// @inject_tag: json:"page",validate:"number,min=1,required"
+	Page int32 `protobuf:"varint,2,opt,name=page,proto3" json:"page" validate:"number,min=1,required"`
+}
+
+func (x *RequestList) Reset() {
+	*x = RequestList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_province_province_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RequestList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RequestList) ProtoMessage() {}
+
+func (x *RequestList) ProtoReflect() protoreflect.Message {
+	mi := &file_province_province_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RequestList.ProtoReflect.Descriptor instead.
+func (*RequestList) Descriptor() ([]byte, []int) {
+	return file_province_province_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *RequestList) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+func (x *RequestList) GetPage() int32 {
+	if x != nil {
+		return x.Page
+	}
+	return 0
+}
+
+type ResponseList struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Provinces []*Province `protobuf:"bytes,1,rep,name=provinces,proto3" json:"provinces,omitempty"`
+}
+
+func (x *ResponseList) Reset() {
+	*x = ResponseList{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_province_province_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ResponseList) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ResponseList) ProtoMessage() {}
+
+func (x *ResponseList) ProtoReflect() protoreflect.Message {
+	mi := &file_province_province_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ResponseList.ProtoReflect.Descriptor instead.
+func (*ResponseList) Descriptor() ([]byte, []int) {
+	return file_province_province_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *ResponseList) GetProvinces() []*Province {
+	if x != nil {
+		return x.Provinces
+	}
+	return nil
+}
+
 var File_province_province_proto protoreflect.FileDescriptor
 
 var file_province_province_proto_rawDesc = []byte{
@@ -379,23 +483,34 @@ var file_province_province_proto_rawDesc = []byte{
 	0x6c, 0x65, 0x12, 0x2e, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x12, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e,
 	0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e,
-	0x63, 0x65, 0x32, 0xfd, 0x01, 0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3e, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x12, 0x17, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76,
-	0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x73, 0x22, 0x00, 0x12, 0x40, 0x0a, 0x07, 0x69, 0x73, 0x45, 0x78, 0x69, 0x73,
-	0x74, 0x12, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x19, 0x2e, 0x70, 0x72,
-	0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49,
-	0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x68, 0x0a, 0x1b, 0x63, 0x68, 0x65, 0x63,
-	0x6b, 0x44, 0x75, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41,
-	0x6e, 0x64, 0x54, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x2c, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e,
-	0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x44,
-	0x75, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64,
-	0x54, 0x69, 0x74, 0x6c, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65,
-	0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74,
-	0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x63, 0x65, 0x22, 0x37, 0x0a, 0x0b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x69, 0x73,
+	0x74, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x61, 0x67, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x70, 0x61, 0x67, 0x65, 0x22, 0x40, 0x0a, 0x0c, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x30, 0x0a, 0x09, 0x70,
+	0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x12,
+	0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x50, 0x72, 0x6f, 0x76, 0x69, 0x6e,
+	0x63, 0x65, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x73, 0x32, 0xb6, 0x02,
+	0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x12, 0x3e, 0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x17, 0x2e, 0x70, 0x72,
+	0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x22,
+	0x00, 0x12, 0x40, 0x0a, 0x07, 0x69, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x12, 0x18, 0x2e, 0x70,
+	0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x44,
+	0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63,
+	0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73,
+	0x74, 0x22, 0x00, 0x12, 0x68, 0x0a, 0x1b, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x44, 0x75, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64, 0x54, 0x69, 0x74,
+	0x6c, 0x65, 0x12, 0x2c, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x44, 0x75, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x65, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x41, 0x6e, 0x64, 0x54, 0x69, 0x74, 0x6c, 0x65,
+	0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x49, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x22, 0x00, 0x12, 0x37, 0x0a,
+	0x04, 0x6c, 0x69, 0x73, 0x74, 0x12, 0x15, 0x2e, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65,
+	0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x70,
+	0x72, 0x6f, 0x76, 0x69, 0x6e, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x4c, 0x69, 0x73, 0x74, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -410,7 +525,7 @@ func file_province_province_proto_rawDescGZIP() []byte {
 	return file_province_province_proto_rawDescData
 }
 
-var file_province_province_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_province_province_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_province_province_proto_goTypes = []interface{}{
 	(*Province)(nil),                           // 0: province.Province
 	(*RequestDetails)(nil),                     // 1: province.RequestDetails
@@ -418,22 +533,27 @@ var file_province_province_proto_goTypes = []interface{}{
 	(*RequestCreate)(nil),                      // 3: province.RequestCreate
 	(*ResponseIsExist)(nil),                    // 4: province.ResponseIsExist
 	(*RequestCheckDuplicatedNameAndTitle)(nil), // 5: province.RequestCheckDuplicatedNameAndTitle
+	(*RequestList)(nil),                        // 6: province.RequestList
+	(*ResponseList)(nil),                       // 7: province.ResponseList
 }
 var file_province_province_proto_depIdxs = []int32{
 	0, // 0: province.ResponseDetails.province:type_name -> province.Province
 	0, // 1: province.RequestCreate.province:type_name -> province.Province
 	0, // 2: province.RequestCheckDuplicatedNameAndTitle.province:type_name -> province.Province
-	3, // 3: province.provinceService.Create:input_type -> province.RequestCreate
-	1, // 4: province.provinceService.isExist:input_type -> province.RequestDetails
-	5, // 5: province.provinceService.checkDuplicatedNameAndTitle:input_type -> province.RequestCheckDuplicatedNameAndTitle
-	2, // 6: province.provinceService.Create:output_type -> province.ResponseDetails
-	4, // 7: province.provinceService.isExist:output_type -> province.ResponseIsExist
-	4, // 8: province.provinceService.checkDuplicatedNameAndTitle:output_type -> province.ResponseIsExist
-	6, // [6:9] is the sub-list for method output_type
-	3, // [3:6] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0, // 3: province.ResponseList.provinces:type_name -> province.Province
+	3, // 4: province.provinceService.Create:input_type -> province.RequestCreate
+	1, // 5: province.provinceService.isExist:input_type -> province.RequestDetails
+	5, // 6: province.provinceService.checkDuplicatedNameAndTitle:input_type -> province.RequestCheckDuplicatedNameAndTitle
+	6, // 7: province.provinceService.list:input_type -> province.RequestList
+	2, // 8: province.provinceService.Create:output_type -> province.ResponseDetails
+	4, // 9: province.provinceService.isExist:output_type -> province.ResponseIsExist
+	4, // 10: province.provinceService.checkDuplicatedNameAndTitle:output_type -> province.ResponseIsExist
+	7, // 11: province.provinceService.list:output_type -> province.ResponseList
+	8, // [8:12] is the sub-list for method output_type
+	4, // [4:8] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_province_province_proto_init() }
@@ -514,6 +634,30 @@ func file_province_province_proto_init() {
 				return nil
 			}
 		}
+		file_province_province_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*RequestList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_province_province_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ResponseList); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -521,7 +665,7 @@ func file_province_province_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_province_province_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -550,6 +694,7 @@ type ProvinceServiceClient interface {
 	Create(ctx context.Context, in *RequestCreate, opts ...grpc.CallOption) (*ResponseDetails, error)
 	IsExist(ctx context.Context, in *RequestDetails, opts ...grpc.CallOption) (*ResponseIsExist, error)
 	CheckDuplicatedNameAndTitle(ctx context.Context, in *RequestCheckDuplicatedNameAndTitle, opts ...grpc.CallOption) (*ResponseIsExist, error)
+	List(ctx context.Context, in *RequestList, opts ...grpc.CallOption) (*ResponseList, error)
 }
 
 type provinceServiceClient struct {
@@ -587,11 +732,21 @@ func (c *provinceServiceClient) CheckDuplicatedNameAndTitle(ctx context.Context,
 	return out, nil
 }
 
+func (c *provinceServiceClient) List(ctx context.Context, in *RequestList, opts ...grpc.CallOption) (*ResponseList, error) {
+	out := new(ResponseList)
+	err := c.cc.Invoke(ctx, "/province.provinceService/list", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProvinceServiceServer is the server API for ProvinceService service.
 type ProvinceServiceServer interface {
 	Create(context.Context, *RequestCreate) (*ResponseDetails, error)
 	IsExist(context.Context, *RequestDetails) (*ResponseIsExist, error)
 	CheckDuplicatedNameAndTitle(context.Context, *RequestCheckDuplicatedNameAndTitle) (*ResponseIsExist, error)
+	List(context.Context, *RequestList) (*ResponseList, error)
 }
 
 // UnimplementedProvinceServiceServer can be embedded to have forward compatible implementations.
@@ -606,6 +761,9 @@ func (*UnimplementedProvinceServiceServer) IsExist(context.Context, *RequestDeta
 }
 func (*UnimplementedProvinceServiceServer) CheckDuplicatedNameAndTitle(context.Context, *RequestCheckDuplicatedNameAndTitle) (*ResponseIsExist, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckDuplicatedNameAndTitle not implemented")
+}
+func (*UnimplementedProvinceServiceServer) List(context.Context, *RequestList) (*ResponseList, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
 
 func RegisterProvinceServiceServer(s *grpc.Server, srv ProvinceServiceServer) {
@@ -666,6 +824,24 @@ func _ProvinceService_CheckDuplicatedNameAndTitle_Handler(srv interface{}, ctx c
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProvinceService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestList)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProvinceServiceServer).List(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/province.provinceService/List",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProvinceServiceServer).List(ctx, req.(*RequestList))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ProvinceService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "province.provinceService",
 	HandlerType: (*ProvinceServiceServer)(nil),
@@ -681,6 +857,10 @@ var _ProvinceService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "checkDuplicatedNameAndTitle",
 			Handler:    _ProvinceService_CheckDuplicatedNameAndTitle_Handler,
+		},
+		{
+			MethodName: "list",
+			Handler:    _ProvinceService_List_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
