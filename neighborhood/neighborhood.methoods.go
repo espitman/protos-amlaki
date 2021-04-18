@@ -36,3 +36,10 @@ func (t *RequestCheckValidNeighborhood) Unmarshal(entry interface{}) RequestChec
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *ResponseList) Unmarshal(entry interface{}) ResponseList {
+	obj, _ := json.Marshal(entry)
+	response := ResponseList{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
