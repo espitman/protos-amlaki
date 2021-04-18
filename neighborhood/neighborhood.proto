@@ -17,6 +17,20 @@ message Neighborhood {
     string city = 4;
 }
 
+message NeighborhoodFull {
+    string id = 1;
+    string title = 2;
+    string name = 3;
+    Area province = 4;
+    Area city = 5;
+}
+
+message Area {
+    string id = 1;
+    string title = 2;
+    string name = 3;
+}
+
 
 message RequestDetails {
     // @inject_tag: json:"id",validate:"required"
@@ -55,10 +69,23 @@ message ResponseCheckValidNeighborhood {
     bool isValid = 1;
 }
 
+message RequestList {
+    // @inject_tag: json:"count",validate:"number,min=10,required"
+    int32 count = 1;
+
+    // @inject_tag: json:"page",validate:"number,min=1,required"
+    int32 page = 2;
+}
+
+message ResponseList {
+    repeated NeighborhoodFull neighborhoods = 1; 
+}
+
 
 service neighborhoodService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc CheckExistByProvinceIdAndCityId(RequestCheckExistByProvinceIdAndCityId) returns (ResponseCheckExistByProvinceIdAndCityId) {}
     rpc CheckValidNeighborhood(RequestCheckValidNeighborhood) returns (ResponseCheckValidNeighborhood) {}
+    rpc list(RequestList) returns (ResponseList) {}
 }
 
