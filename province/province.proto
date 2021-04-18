@@ -11,6 +11,12 @@ message Province {
     string name = 2;
 }
 
+message City {
+    string id = 1;
+    string title = 2;
+    string name = 3;
+}
+
 
 message RequestDetails {
     // @inject_tag: json:"id",validate:"required"
@@ -51,11 +57,21 @@ message ResponseList {
     repeated ResponseDetails provinces = 1; 
 }
 
+message RequestProvinceCitiesList {
+    // @inject_tag: json:"provinceId",validate:"alphanum,required"
+    string provinceId = 1;
+}
+
+message ResponseProvinceCitiesList {
+    repeated City cities = 1; 
+}
+
 
 service provinceService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
     rpc checkDuplicatedNameAndTitle(RequestCheckDuplicatedNameAndTitle) returns (ResponseIsExist) {}
     rpc list(RequestList) returns (ResponseList) {}
+    rpc provinceCities(RequestProvinceCitiesList) returns (ResponseProvinceCitiesList) {}
 }
 
