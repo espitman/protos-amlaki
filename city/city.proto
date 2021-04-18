@@ -85,7 +85,7 @@ message RequestProvinceCitiesList {
 
 
 message ResponseProvinceCitiesList {
-    CityBrief cities = 1;
+    repeated CityBrief cities = 1;
 }
 
 
