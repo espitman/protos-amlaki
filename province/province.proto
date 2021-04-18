@@ -57,21 +57,10 @@ message ResponseList {
     repeated ResponseDetails provinces = 1; 
 }
 
-message RequestProvinceCitiesList {
-    // @inject_tag: json:"provinceId",validate:"alphanum,required"
-    string provinceId = 1;
-}
-
-message ResponseProvinceCitiesList {
-    repeated City cities = 1; 
-}
-
-
 service provinceService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
     rpc checkDuplicatedNameAndTitle(RequestCheckDuplicatedNameAndTitle) returns (ResponseIsExist) {}
     rpc list(RequestList) returns (ResponseList) {}
-    rpc provinceCities(RequestProvinceCitiesList) returns (ResponseProvinceCitiesList) {}
 }
 

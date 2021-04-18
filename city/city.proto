@@ -21,6 +21,12 @@ message CityFull {
     Province province = 4;
 }
 
+message CityBrief {
+    string id = 1;
+    string title = 2;
+    string name = 3;
+}
+
 message Province {
     string id = 1;
     string title = 2;
@@ -72,10 +78,24 @@ message ResponseList {
     repeated CityFull cities = 1; 
 }
 
+message RequestProvinceCitiesList {
+    // @inject_tag: json:"provinceId",validate:"alphanum,required"
+    string provinceId = 1;
+}
+
+
+message ResponseProvinceCitiesList {
+    CityBrief cities = 1;
+}
+
+
+
+
 service cityService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc isExist(RequestDetails) returns (ResponseIsExist) {}
     rpc checkProvinceHasCityByName(RequestCheckProvinceHasCityByName) returns (ResponseCheckProvinceHasCityByName) {}
     rpc list(RequestList) returns (ResponseList) {}
+    rpc provinceCities(RequestProvinceCitiesList) returns (ResponseProvinceCitiesList) {}
 }
 
