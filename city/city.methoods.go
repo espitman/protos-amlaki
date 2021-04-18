@@ -29,3 +29,10 @@ func (t *ResponseList) Unmarshal(entry interface{}) ResponseList {
 	_ = json.Unmarshal(obj, &response)
 	return response
 }
+
+func (t *ResponseProvinceCitiesList) Unmarshal(entry interface{}) ResponseProvinceCitiesList {
+	obj, _ := json.Marshal(entry)
+	response := ResponseProvinceCitiesList{}
+	_ = json.Unmarshal(obj, &response)
+	return response
+}
