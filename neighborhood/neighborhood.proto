@@ -25,6 +25,12 @@ message NeighborhoodFull {
     Area city = 5;
 }
 
+message NeighborhoodBrief {
+    string id = 1;
+    string title = 2;
+    string name = 3;
+}
+
 message Area {
     string id = 1;
     string title = 2;
@@ -81,11 +87,21 @@ message ResponseList {
     repeated NeighborhoodFull neighborhoods = 1; 
 }
 
+message RequestCityNeighborhoodsList {
+    // @inject_tag: json:"provinceId",validate:"alphanum,required"
+    string cityId = 1;
+}
+
+message ResponseCityNeighborhoodsList { 
+    repeated NeighborhoodBrief neighborhoods = 1;
+}
+
 
 service neighborhoodService {
     rpc Create(RequestCreate) returns (ResponseDetails) {}
     rpc CheckExistByProvinceIdAndCityId(RequestCheckExistByProvinceIdAndCityId) returns (ResponseCheckExistByProvinceIdAndCityId) {}
     rpc CheckValidNeighborhood(RequestCheckValidNeighborhood) returns (ResponseCheckValidNeighborhood) {}
     rpc list(RequestList) returns (ResponseList) {}
+    rpc cityNeighborhoods(RequestCityNeighborhoodsList) returns (ResponseCityNeighborhoodsList) {}
 }
 
