@@ -60,7 +60,7 @@ message House {
     // @inject_tag: json:"floorMaterial",validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"
     string floorMaterial = 16;
 
-    // @inject_tag: json:"cabinetMaterial",validate:"alpha"
+    // @inject_tag: json:"cabinetMaterial",validate:"alpha,oneof='mdf' 'glass' 'memberan' 'metal' 'wooden'"
     string cabinetMaterial = 17;
 
     // @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
@@ -69,10 +69,10 @@ message House {
     // @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n' 's'"
     string buildingDirection = 19;
 
-    // @inject_tag: json:"heatingSystem",validate:"alpha"
+    // @inject_tag: json:"heatingSystem",validate:"alpha,oneof='gasHeaters' 'oilHeater' 'radiator' 'package'"
     string heatingSystem = 20;
 
-    // @inject_tag: json:"coolingSystem",validate:"alpha"
+    // @inject_tag: json:"coolingSystem",validate:"alpha,oneof='waterCooler' 'gasCooler' 'chiller' 'airConditioner' 'ceilingFan'"
     string coolingSystem = 21;
 
     // @inject_tag: json:"typeOfToilet",validate:"alpha,oneof='irani' 'farangi' 'both'"

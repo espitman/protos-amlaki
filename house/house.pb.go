@@ -168,16 +168,16 @@ type House struct {
 	FacadeMaterial string `protobuf:"bytes,15,opt,name=facadeMaterial,proto3" json:"facadeMaterial" validate:"alpha,oneof='granite' 'travertine' 'roman' 'cement' 'brick',required"`
 	// @inject_tag: json:"floorMaterial",validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"
 	FloorMaterial string `protobuf:"bytes,16,opt,name=floorMaterial,proto3" json:"floorMaterial" validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"`
-	// @inject_tag: json:"cabinetMaterial",validate:"alpha"
-	CabinetMaterial string `protobuf:"bytes,17,opt,name=cabinetMaterial,proto3" json:"cabinetMaterial" validate:"alpha"`
+	// @inject_tag: json:"cabinetMaterial",validate:"alpha,oneof='mdf' 'glass' 'memberan' 'metal' 'wooden'"
+	CabinetMaterial string `protobuf:"bytes,17,opt,name=cabinetMaterial,proto3" json:"cabinetMaterial" validate:"alpha,oneof='mdf' 'glass' 'memberan' 'metal' 'wooden'"`
 	// @inject_tag: json:"warehouseSize",validate:"number,min=0,required"
 	WarehouseSize int32 `protobuf:"varint,18,opt,name=warehouseSize,proto3" json:"warehouseSize" validate:"number,min=0,required"`
 	// @inject_tag: json:"buildingDirection",validate:"alpha,oneof='n' 's'"
 	BuildingDirection string `protobuf:"bytes,19,opt,name=buildingDirection,proto3" json:"buildingDirection" validate:"alpha,oneof='n' 's'"`
-	// @inject_tag: json:"heatingSystem",validate:"alpha"
-	HeatingSystem string `protobuf:"bytes,20,opt,name=heatingSystem,proto3" json:"heatingSystem" validate:"alpha"`
-	// @inject_tag: json:"coolingSystem",validate:"alpha"
-	CoolingSystem string `protobuf:"bytes,21,opt,name=coolingSystem,proto3" json:"coolingSystem" validate:"alpha"`
+	// @inject_tag: json:"heatingSystem",validate:"alpha,oneof='gasHeaters' 'oilHeater' 'radiator' 'package'"
+	HeatingSystem string `protobuf:"bytes,20,opt,name=heatingSystem,proto3" json:"heatingSystem" validate:"alpha,oneof='gasHeaters' 'oilHeater' 'radiator' 'package'"`
+	// @inject_tag: json:"coolingSystem",validate:"alpha,oneof='waterCooler' 'gasCooler' 'chiller' 'airConditioner' 'ceilingFan'"
+	CoolingSystem string `protobuf:"bytes,21,opt,name=coolingSystem,proto3" json:"coolingSystem" validate:"alpha,oneof='waterCooler' 'gasCooler' 'chiller' 'airConditioner' 'ceilingFan'"`
 	// @inject_tag: json:"typeOfToilet",validate:"alpha,oneof='irani' 'farangi' 'both'"
 	TypeOfToilet string `protobuf:"bytes,22,opt,name=typeOfToilet,proto3" json:"typeOfToilet" validate:"alpha,oneof='irani' 'farangi' 'both'"`
 	// @inject_tag: json:"amenities"
