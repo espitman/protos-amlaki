@@ -164,10 +164,10 @@ type House struct {
 	FloorsNo int32 `protobuf:"varint,13,opt,name=floorsNo,proto3" json:"floorsNo" validate:"number,min=0"`
 	// @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
 	NumberOfFloors int32 `protobuf:"varint,14,opt,name=numberOfFloors,proto3" json:"numberOfFloors" validate:"number,min=0,required"`
-	// @inject_tag: json:"facadeMaterial",validate:"alpha,required"
-	FacadeMaterial string `protobuf:"bytes,15,opt,name=facadeMaterial,proto3" json:"facadeMaterial" validate:"alpha,required"`
-	// @inject_tag: json:"floorMaterial",validate:"alpha"
-	FloorMaterial string `protobuf:"bytes,16,opt,name=floorMaterial,proto3" json:"floorMaterial" validate:"alpha"`
+	// @inject_tag: json:"facadeMaterial",validate:"alpha,oneof='granite' 'travertine' 'roman' 'cement' 'brick',required"
+	FacadeMaterial string `protobuf:"bytes,15,opt,name=facadeMaterial,proto3" json:"facadeMaterial" validate:"alpha,oneof='granite' 'travertine' 'roman' 'cement' 'brick',required"`
+	// @inject_tag: json:"floorMaterial",validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"
+	FloorMaterial string `protobuf:"bytes,16,opt,name=floorMaterial,proto3" json:"floorMaterial" validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"`
 	// @inject_tag: json:"cabinetMaterial",validate:"alpha"
 	CabinetMaterial string `protobuf:"bytes,17,opt,name=cabinetMaterial,proto3" json:"cabinetMaterial" validate:"alpha"`
 	// @inject_tag: json:"warehouseSize",validate:"number,min=0,required"

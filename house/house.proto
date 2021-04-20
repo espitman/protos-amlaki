@@ -54,10 +54,10 @@ message House {
     // @inject_tag: json:"numberOfFloors",validate:"number,min=0,required"
     int32 numberOfFloors = 14;
 
-    // @inject_tag: json:"facadeMaterial",validate:"alpha,required"
+    // @inject_tag: json:"facadeMaterial",validate:"alpha,oneof='granite' 'travertine' 'roman' 'cement' 'brick',required"
     string facadeMaterial = 15;
 
-    // @inject_tag: json:"floorMaterial",validate:"alpha"
+    // @inject_tag: json:"floorMaterial",validate:"alpha,oneof='stone' 'ceramic' 'parquet' 'laminate' 'mosaic'"
     string floorMaterial = 16;
 
     // @inject_tag: json:"cabinetMaterial",validate:"alpha"
